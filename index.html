@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omnisyn Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2d3250;
+      --background: #f5f7fa;
+      --text: #111827;
+      --accent: #4b5563;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .lang-toggle {
+      margin-left: auto;
+      background-color: #fff;
+      color: var(--primary);
+      border: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+  </style>
+  <script>
+    function toggleLanguage() {
+      const lang = document.documentElement.lang;
+      const newLang = lang === 'en' ? 'es' : 'en';
+      document.documentElement.lang = newLang;
+      location.href = newLang === 'es' ? 'index_es.html' : 'index.html';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Omnisyn Logo">
+      <h1>Omnisyn Technologies</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <button class="lang-toggle" onclick="toggleLanguage()">ES/EN</button>
+  </header>
+  <main>
+    <section>
+      <h2>Welcome to Omnisyn Technologies</h2>
+      <p>
+        We are a Monterrey-based company specializing in cybersecurity, custom software development, and digital solutions powered by artificial intelligence. Our goal is to provide tailored, secure, and scalable technology to help your business grow.
+      </p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Omnisyn Technologies. All rights reserved.
+  </footer>
+</body>
+</html>

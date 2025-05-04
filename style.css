@@ -18,12 +18,12 @@ body {
 }
 .site-header {
   display: flex; align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   background: var(--white);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: sticky; top: 0; z-index: 100;
 }
-.logo { height: 45px; }
+.logo { height: 65px; width: auto; }
 .site-nav { margin-left: auto; }
 .nav-list { display: flex; gap: 1.5rem; list-style: none; }
 .nav-list li {

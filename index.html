@@ -1,135 +1,209 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omnisyn Technologies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2d3250;
-      --background: #f5f7fa;
-      --text: #111827;
-      --accent: #4b5563;
-      --card-bg: #ffffff;
-    }
-
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background-color: var(--background);
-      color: var(--text);
-    }
-
-    header {
-      background-color: var(--primary);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #fff;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo img {
-      height: 50px;
-    }
-
-    nav a {
-      margin-left: 1.5rem;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .lang-toggle {
-      margin-left: auto;
-      background-color: #fff;
-      color: var(--primary);
-      border: none;
-      padding: 0.4rem 0.75rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section {
-      background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: var(--accent);
-    }
-  </style>
-  <script>
-    function toggleLanguage() {
-      const lang = document.documentElement.lang;
-      const newLang = lang === 'en' ? 'es' : 'en';
-      document.documentElement.lang = newLang;
-      location.href = newLang === 'es' ? 'index_es.html' : 'index.html';
-    }
-  </script>
+  <title>OmniSyn Technologies</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="Omnisyn Logo">
-      <h1>Omnisyn Technologies</h1>
-    </div>
+    <img src="logo.png" alt="OmniSyn Logo" class="logo">
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact Us</a>
+      <ul id="menu"></ul>
     </nav>
-    <button class="lang-toggle" onclick="toggleLanguage()">ES/EN</button>
   </header>
-  <main>
-    <section>
-      <h2>Welcome to Omnisyn Technologies</h2>
-      <p>
-        We are a Monterrey-based company specializing in cybersecurity, custom software development, and digital solutions powered by artificial intelligence. Our goal is to provide tailored, secure, and scalable technology to help your business grow.
-      </p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Omnisyn Technologies. All rights reserved.
-  </footer>
+  <main id="content"></main>
+  <script src="script.js"></script>
 </body>
 </html>
+
+/* style.css */
+:root {
+  --primary-color: #2d3250;
+  --background-color: #fff;
+  --text-color: #333;
+  --gray-light: #f5f5f5;
+  --gray-dark: #888;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--background-color);
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.logo {
+  height: 40px;
+}
+nav {
+  margin-left: auto;
+}
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+nav li {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+  color: var(--gray-dark);
+}
+nav li:hover,
+nav li.active {
+  color: var(--primary-color);
+}
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+button.pdf-download {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button.pdf-download:hover {
+  background: #1f2438;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+input,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--gray-dark);
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+input[type="submit"]:hover {
+  background: #1f2438;
+}
+
+// script.js
+const menuItems = [
+  {
+    name: 'About',
+    content: `
+      <h1>About OmniSyn Technologies</h1>
+      <p>OmniSyn Technologies is a Monterrey-based tech company specializing in cybersecurity, custom software, and information technology services. We help businesses protect their digital assets through services like penetration testing, risk assessments, and cyber defense planning. We also design tailored software solutions — including AI-powered tools — to support each client’s operational goals. At OmniSyn, we combine innovation and security to help organizations grow with confidence.</p>
+      <h2>Mission</h2>
+      <p>Our mission is to deliver cutting-edge technology solutions with uncompromising security standards.</p>
+      <h2>Vision</h2>
+      <p>Our vision is to be the leading partner in technology innovation and cyber resilience for businesses worldwide.</p>
+    `
+  },
+  {
+    name: 'Cybersecurity',
+    content: `
+      <h1>Cybersecurity Services</h1>
+      <p>We provide comprehensive cybersecurity services to safeguard your business.</p>
+      <ul>
+        <li>Basic Penetration Testing</li>
+        <li>Advanced Penetration Testing</li>
+        <li>Risk Assessment</li>
+        <li>Vulnerability Scanning</li>
+        <li>Incident Response Planning</li>
+      </ul>
+    `
+  },
+  {
+    name: 'AI',
+    content: `
+      <h1>AI & Big Data Services</h1>
+      <p>Leverage the power of AI and big data to optimize your operations.</p>
+      <ul>
+        <li>Customized Machine Learning Integration</li>
+        <li>Natural Language Processing Solutions</li>
+        <li>Predictive Analytics</li>
+        <li>Big Data Analytics & Visualization</li>
+      </ul>
+    `
+  },
+  {
+    name: 'Software',
+    content: `
+      <h1>Software Development</h1>
+      <p>Tailor-made software solutions designed to fit your business needs.</p>
+      <ul>
+        <li>Custom SaaS Development</li>
+        <li>Web, Desktop & Mobile Applications</li>
+        <li>API Development & Integration</li>
+      </ul>
+    `
+  },
+  {
+    name: 'Prices',
+    content: `
+      <h1>Pricing</h1>
+      <table>
+        <thead><tr><th>Service</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Basic Penetration Testing</td><td>$1,500</td></tr>
+          <tr><td>Advanced Penetration Testing</td><td>$3,000</td></tr>
+          <tr><td>Customized ML Integration</td><td>$2,500</td></tr>
+          <tr><td>Custom SaaS Development</td><td>$5,000+</td></tr>
+        </tbody>
+      </table>
+      <button class="pdf-download">Download PDF</button>
+    `
+  },
+  {
+    name: 'Contact Us',
+    content: `
+      <h1>Contact Us</h1>
+      <form action="mailto:contact@omnisyn.com.mx" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+    `
+  }
+];
+
+const menu = document.getElementById('menu');
+const contentDiv = document.getElementById('content');
+
+menuItems.forEach((item, idx) => {
+  const li = document.createElement('li');
+  li.textContent = item.name;
+  li.addEventListener('click', () => selectMenu(idx));
+  menu.appendChild(li);
+});
+
+function selectMenu(index) {
+  document.querySelectorAll('#menu li').forEach(li => li.classList.remove('active'));
+  menu.children[index].classList.add('active');
+  contentDiv.innerHTML = menuItems[index].content;
+}
+
+// Initialize first page
+selectMenu(0);

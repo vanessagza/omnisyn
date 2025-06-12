@@ -121,11 +121,13 @@ body {
   color: var(--white);
   border-radius: 8px;
   padding: 2rem;
+  margin-left: 1.5rem;
 }
 .quote-section a,
 .contact-card a {
   color: var(--white) !important;
   text-decoration: underline;
+  margin-left: 1.5rem;
 }
 .download-section {
   text-align: center;
